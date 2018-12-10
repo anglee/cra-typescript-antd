@@ -31,17 +31,23 @@
     "test:watch": "craco test",
     "test": "CI=true craco test",
     "prettier": "prettier --write './**/*.{ts,tsx,js,css,scss,json}'",
-    "prepush": "run-s lint test",
     "tsc-lint": "tsc --noEmit -p tsconfig.prod.json",
     "tslint": "tslint -c tslint.prepush.json \"src/**/*.{ts,tsx}\"",
     "tslint:fix": "tslint -c tslint.prepush.json --fix \"src/**/*.{ts,tsx}\"",
     "lint": "run-s tslint tsc-lint",
     "fix": "run-s tslint:fix prettier",
+    "prepush": "run-s lint test",
     "eject": "react-scripts-ts eject"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,json,css,less,md}": [
-      "prettier --write"
+    "*.{ts,tsx}": [
+      "tslint -c tslint.prepush.json --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,json,css,less,md}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "husky": {
