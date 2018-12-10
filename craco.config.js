@@ -12,6 +12,6 @@ module.exports = {
       //     "@link-color": "#1DA57A"
       //   }
       // }
-    }
-  ]
+    },
+  ],
 };

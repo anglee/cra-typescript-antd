@@ -4,7 +4,7 @@ import randomColor from "randomcolor";
 
 interface IProps {
   name: string;
-  onClickButton: (args: {name: string}) => Promise<void>;
+  onClickButton: (args: { name: string }) => Promise<void>;
 }
 
 interface IState {
@@ -13,7 +13,7 @@ interface IState {
 
 class Hello extends React.Component<IProps, IState> {
   public state: IState = {
-    isProcessing: false
+    isProcessing: false,
   };
   public render(): React.ReactNode {
     return (
@@ -21,7 +21,7 @@ class Hello extends React.Component<IProps, IState> {
         <div>Hello, {this.props.name}</div>
         <Button
           type="primary"
-          style={{width: "200px"}}
+          style={{ width: "200px" }}
           loading={this.state.isProcessing}
           onClick={async () => {
             this.setState({ isProcessing: true });
