@@ -27,8 +27,11 @@
     "build": "craco build",
     "test": "craco test",
     "prettier": "prettier --write './**/*.{ts,tsx,js,css,scss,json}'",
+    "tsc-lint": "tsc --noEmit -p tsconfig.prod.json",
     "tslint": "tslint -c tslint.prepush.json \"src/**/*.{ts,tsx}\"",
     "tslint-fix": "tslint -c tslint.prepush.json --fix \"src/**/*.{ts,tsx}\"",
+    "lint": "yarn run tslint && yarn run tsc-lint",
+    "fix": "yarn run tslint-fix && yarn run prettier",
     "eject": "react-scripts-ts eject"
   },
   "prettier": {
