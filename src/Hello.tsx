@@ -1,6 +1,6 @@
 import { Button } from "antd";
-import React, { Component } from "react";
 import randomColor from "randomcolor";
+import React, { Component } from "react";
 
 interface IProps {
   name: string;
