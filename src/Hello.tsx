@@ -4,7 +4,7 @@ import randomColor from "randomcolor";
 
 interface IProps {
   name: string;
-  onClickButton: (name: string) => Promise<void>;
+  onClickButton: (args: {name: string}) => Promise<void>;
 }
 
 interface IState {

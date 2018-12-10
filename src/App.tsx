@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import Hello from "./Hello";
 
 class App extends Component {
@@ -20,11 +20,14 @@ class App extends Component {
           >
             Learn React
           </a>
-          <Hello name={"Nelly Sachs"} onClickButton={(name) => {
-            return new Promise((res) => {
-              setTimeout(res, 1000);
-            })
-          }}/>
+          <Hello
+            name={"Nelly Sachs"}
+            onClickButton={({ name }) => {
+              return new Promise(res => {
+                setTimeout(res, 1000);
+              });
+            }}
+          />
         </header>
       </div>
     );
