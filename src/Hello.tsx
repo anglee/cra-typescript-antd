@@ -21,6 +21,7 @@ class Hello extends React.Component<IProps, IState> {
         <div>Hello, {this.props.name}</div>
         <Button
           type="primary"
+          style={{width: "200px"}}
           loading={this.state.isProcessing}
           onClick={async () => {
             this.setState({ isProcessing: true });
