@@ -21,19 +21,22 @@
     "@types/randomcolor": "^0.5.0",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
     "tslint-config-prettier": "^1.17.0"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test:watch": "craco test",
+    "test": "CI=true craco test",
     "prettier": "prettier --write './**/*.{ts,tsx,js,css,scss,json}'",
+    "prepush": "run-s lint test",
     "tsc-lint": "tsc --noEmit -p tsconfig.prod.json",
     "tslint": "tslint -c tslint.prepush.json \"src/**/*.{ts,tsx}\"",
-    "tslint-fix": "tslint -c tslint.prepush.json --fix \"src/**/*.{ts,tsx}\"",
-    "lint": "yarn run tslint && yarn run tsc-lint",
-    "fix": "yarn run tslint-fix && yarn run prettier",
+    "tslint:fix": "tslint -c tslint.prepush.json --fix \"src/**/*.{ts,tsx}\"",
+    "lint": "run-s tslint tsc-lint",
+    "fix": "run-s tslint:fix prettier",
     "eject": "react-scripts-ts eject"
   },
   "lint-staged": {
@@ -44,7 +47,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run lint && yarn test"
+      "pre-push": "run-s prepush"
     }
   },
   "prettier": {
