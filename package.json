@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@types/randomcolor": "^0.5.0",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
     "tslint-config-prettier": "^1.17.0"
   },
@@ -33,6 +35,17 @@
     "lint": "yarn run tslint && yarn run tsc-lint",
     "fix": "yarn run tslint-fix && yarn run prettier",
     "eject": "react-scripts-ts eject"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json,css,less,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run lint && yarn test"
+    }
   },
   "prettier": {
     "printWidth": 100,
