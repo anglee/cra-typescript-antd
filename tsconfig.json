@@ -1,21 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "allowJs": true,
-    "skipLibCheck": false,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["es6", "dom", "esnext.asynciterable"],
     "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "jsx": "preserve",
-    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "resolveJsonModule": true,
+    "outDir": "build/dist",
+    "skipLibCheck": true,
     "sourceMap": true,
-    "strictNullChecks": true
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es5"
   },
   "include": ["src"]
 }
