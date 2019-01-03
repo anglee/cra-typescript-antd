@@ -1,3 +1,4 @@
+import _ from "lodash";
 import React, { Component } from "react";
 import "./App.css";
 import Hello from "./Hello";
@@ -20,6 +21,9 @@ class App extends Component {
           >
             Learn React
           </a>
+          {_.map(_.range(5), (it: number) => (
+            <div key={it}>{it}</div>
+          ))}
           <Hello
             name={"Nelly Sachs"}
             onClickButton={({ name }) => {
