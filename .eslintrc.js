@@ -17,6 +17,8 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/explicit-function-return-type": ["error", { allowExpressions: true }],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-console": ["error"],
     "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
     "spaced-comment": ["error", "always", { markers: ["/"] }],
   },
