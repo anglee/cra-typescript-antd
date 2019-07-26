@@ -12,11 +12,19 @@
     "react-scripts": "3.0.1",
     "typescript": "3.5.3"
   },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "prettier": "prettier --write './**/*.{ts,tsx,js,css,less,scss,json}'",
     "eject": "react-scripts eject"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "all"
   },
   "eslintConfig": {
     "extends": "react-app"
