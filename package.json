@@ -35,7 +35,7 @@
     "test:interactive": "react-scripts test",
     "prettier": "prettier --write './**/*.{ts,tsx,js,css,less,scss,json}'",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx src --ignore-pattern src/serviceWorker.ts",
-    "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --ignore-pattern src/serviceWorker.ts --fix",
+    "eslint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src --ignore-pattern src/serviceWorker.ts",
     "lint": "run-s eslint",
     "fix": "run-s eslint:fix prettier",
     "prepush": "run-s lint test",
@@ -56,7 +56,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+      "eslint",
       "pretty-quick --staged",
       "git add"
     ],
