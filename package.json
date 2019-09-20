@@ -8,6 +8,7 @@
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.5",
     "antd": "^3.23.3",
+    "craco-antd": "^1.12.0",
     "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -15,6 +16,7 @@
     "typescript": "3.5.3"
   },
   "devDependencies": {
+    "@craco/craco": "^5.5.0",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^5.0.1",
@@ -30,10 +32,10 @@
     "pretty-quick": "^1.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "CI=true react-scripts test",
-    "test:interactive": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "CI=true craco test",
+    "test:interactive": "craco test",
     "prettier": "prettier --write './**/*.{ts,tsx,js,css,less,scss,json}'",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx src --ignore-pattern src/serviceWorker.ts",
     "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --ignore-pattern src/serviceWorker.ts --fix",
